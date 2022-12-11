@@ -8,7 +8,13 @@ abstract class Model
 		
 		$q = $this->db->prepare($sql);
 		$resultat = $q->execute($params);
+		
 		return $q;
+	}
+	
+	protected function getLastInsertId():int{
+		$db = $this->db;
+		return $db->lastInsertId();
 	}
 	
 	private function getDB():PDO{

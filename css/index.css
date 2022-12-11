@@ -1,0 +1,119 @@
+header{
+	color: white;
+	background-color: rgb(55 65 81);
+	overflow: hidden;
+	height: 12%;
+	width: 100%;
+	position: absolute;
+	top:0px;
+	left:0px;	
+}
+
+header>*{
+	margin-top: 0%;
+	height:100%;
+	display: inline-block;
+}
+
+#navigation{
+	position: relative;
+	margin-left: 30%;
+}
+
+#navigation li{
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+	color: white;
+}
+
+#navigation a li{
+	height: 100%
+}
+
+#navigation li:hover{
+	background-color: white;
+	color: rgb(55 65 81);
+}
+
+#settings{
+	float: right;
+}
+
+#settings div{
+	display: inline-block;
+	width: 100px;
+	
+}
+
+/* Form */
+
+form{
+	height: 60%;
+	width: 33%;
+	background-color: #607292;
+	position: absolute;
+	top: 25%;
+	left:33%;
+	border-radius: 15px;
+}
+
+form>*{
+	display: block;	
+}
+
+form h2{
+	text-align: center;
+	color: white;
+}
+
+label{	
+	margin-left: 15%;
+	font-size: 1.1em;
+}
+
+input[type="text"] , input[type="submit"]{
+	margin-left: 15%;
+	margin-bottom: 5%;
+	width: 70%;
+}
+
+#message{
+	height: 5%;
+	width: 33%;
+	position: absolute;
+	top: 85%;
+	left:33%;
+	background-color: #ebf8a4;
+	border: solid 1px #a2d246
+}
+
+/* lignes */
+
+h1{
+	margin-top: 7%;
+	margin-left: 40%;
+}
+
+
+
+table{
+	margin-left: 11%;
+	border-collapse: collapse;
+}
+
+td, th{
+	width: 8%;
+}
+
+td{
+	background-color: #C1CDCD;
+}
+
+th{
+	background-color: #7A8B8B;
+}
+
+
+
+

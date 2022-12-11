@@ -3,18 +3,19 @@
 
 <head>
 	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="public/css/main.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?= $this->titre; ?></title>
 </head>
 <body>
 	<header>
-	<menu>
-		<a href="index.php?action=add-animal" >Ajouter Animal</a>
-		<a href="index.php" action="add-proprietaire">Ajouter Proprietaire</a>
-		<a href="index.php" action="search">Rechercher</a>
-		<a href="index.php">Page Principale</a>
-	</menu>
+		<img src="img/logo.png">
+		<ul id="navigation">
+			<a href="index.php?action=add-animal" ><li>Ajouter Animal</li></a>
+			<a href="index.php?action=add-proprietaire" ><li>Ajouter Proprietaire</li></a>
+			<a href="index.php?action=search" ><li>Rechercher</li></a>
+			<a href="index.php"><li>Page Principale</li></a>
+		</ul>
 	</header>
 	<main id="contenu">
 		<?= $contenu; ?>

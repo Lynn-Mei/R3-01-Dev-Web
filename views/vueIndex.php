@@ -1,6 +1,5 @@
 <h1>Bienvenue chez <?= $nomAnimalerie ?></h1>
-
-
+<p>Voici la liste des animaux :</p>
 <table>
 	<tr>
 		<th>ID</th>
@@ -17,7 +16,7 @@
 		foreach($listeAnimals as $element){
 			echo "<tr>";
 			echo $element;
-			echo "<td><a>Edit</a><a> Delete</a></td></tr>";
+			echo "<td><a>Edit</a><a href='index.php?action=del-animal&idAnimal=".$element->getIdAnimal()."'>Delete</a></td></tr>";
 		}
 	}else{
 		echo $listeAnimals;	

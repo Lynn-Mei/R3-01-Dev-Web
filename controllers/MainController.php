@@ -9,7 +9,7 @@ class MainController{
 		
 	}
 	
-	public function Index():void {
+	public function displayIndex():void {
 		$indexView = new View('Index');
 		$manager = new animalManager();
 		$getOne = $manager->getAll();
@@ -17,11 +17,10 @@ class MainController{
 		$indexView->generer(['nomAnimalerie' => "NyanCat",'listeAnimals' => $getOne]);
 	}
 	
-	public function AddAnimal():void{
-		$indexView = new View('AddAnimal');
+	public function displaySearch():void{
+		$indexView = new View('Search');
 		$indexView->generer([]);
 	}
-	
 }
 
 ?>
