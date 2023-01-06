@@ -10,12 +10,23 @@ $ownerRoute = new OwnerController();
 
 if(isset($_GET['action'])){
 	$action = $_GET['action'];
-	if($action == 'add-animal' || $action == 'edit-animal'){
+	if($action == 'add-animal'){
 		$animalRoute->displayAddAnimal();
 		if(isset($_POST['nom'])){
 			$val = array();
 
 			$animalRoute->addAnimal($_POST);
+		}
+	}
+	if($action == 'edit-animal'){
+		if(isset($_GET['idAnimal'])){
+			$animalRoute->displayEditAnimal($_GET['idAnimal']);
+		}
+		if(isset($_POST['nom'])){
+			$val = array();
+			
+			$animalRoute->updateAnimal($_POST);
+			$animalRoute->displayEditAnimal($_POST['idAnimal']);
 		}
 	}
 	if($action == 'add-proprietaire'){

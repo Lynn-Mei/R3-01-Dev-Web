@@ -14,6 +14,14 @@ class AnimalController{
 		$indexView = new View('AddAnimal');
 		$indexView->generer(['val'=>$val]);
 	}
+
+	public function displayEditAnimal(int $idAnimal):void{
+		$indexView = new View('AddAnimal');
+		$manager = new animalManager();
+		$getOne = $manager->getByID($idAnimal);
+		
+		$indexView->generer(['id'=>$idAnimal, 'nom'=>$getOne->getNom(),'espece'=>$getOne->getEspece(),'proprietaire'=>$getOne->getProprietaire(),'cri'=>$getOne->getCri(), 'age'=>$getOne->getAge()]);
+	}
 	
 	public function addAnimal(array $values):Animal
 	{
@@ -31,6 +39,25 @@ class AnimalController{
 		$animal->hydrate($values);
 		
 		echo "<p id='message' >L'animal ".$animal->getNom()." a bien ete insere !</p>";
+		
+		return $animal;
+	}
+
+	public function updateAnimal(array $values):Animal
+	{
+		$manager = new animalManager();
+		
+		$val = array(); 
+		foreach ($values as $key => $value) {	
+			array_push($val, $value);
+		}
+		
+		$manager->updateAnimal($values);
+		
+		$animal = new Animal();
+		$animal->hydrate($values);
+		
+		echo "<p id='message' >L'animal ".$animal->getNom()." a bien ete modifie !</p>";
 		
 		return $animal;
 	}

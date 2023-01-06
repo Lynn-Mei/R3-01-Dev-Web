@@ -1,15 +1,24 @@
-<h1>Ajouter un animal</h1>
-<form action="index.php?action=add-animal" method="POST">
+<?php
+if(isset($id)){
+	echo '<h1>Modifier un animal</h1>';
+	echo '<form action="index.php?action=edit-animal" method="POST">';
+	echo '<input type="hidden" name="idAnimal" value='.$id.'>';
+}
+else{
+	echo '<h1>Ajouter un animal</h1>';
+	echo '<form action="index.php?action=add-animal" method="POST">';
+}
+?>
 	<label for="nom">Nom: </label>
-	<input type="text" name="nom"/></br>
+	<input type="text" name="nom"  value="<?php if(isset($nom)){echo $nom;}?>"/></br>
 	<label for="nom">Espece: </label>
-	<input type="text" name="espece"/></br>
+	<input type="text" name="espece" value="<?php if(isset($espece)){echo $espece;}?>"/></br>
 	<label for="nom">Proprietaire: </label>
-	<input type="text" name="proprietaire"/></br>
+	<input type="text" name="proprietaire" value="<?php if(isset($proprietaire)){echo $proprietaire;}?>"/></br>
 	<label for="nom">Cri: </label>
-	<input type="text" name="cri"/></br>
+	<input type="text" name="cri" value="<?php if(isset($cri)){echo $cri;}?>"/></br>
 	<label for="nom">Age: </label>
-	<input type="text" name="age"/></br>
+	<input type="text" name="age" value="<?php if(isset($age)){echo $age;}?>"/></br>
 	<input type="submit"/>
 
 </form>

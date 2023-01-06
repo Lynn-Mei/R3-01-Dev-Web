@@ -22,6 +22,10 @@ class AnimalManager extends Model
 		return $id;
 	}
 	
+	public function updateAnimal(Array $values){
+	    $q = $this->execRequest('UPDATE animal SET nom=:nom, proprietaire=:proprietaire, espece=:espece, cri=:cri, age=:age WHERE idAnimal=:idAnimal',$values);
+	}
+
 	public function deleteAnimal(int $idAnimal){
 		$q = $this->execRequest('DELETE FROM animal WHERE idAnimal=?', [$idAnimal]);
 		return True;

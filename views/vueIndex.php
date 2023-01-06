@@ -16,7 +16,7 @@
 		foreach($listeAnimals as $element){
 			echo "<tr>";
 			echo $element;
-			echo "<td><a>Edit</a><a href='index.php?action=del-animal&idAnimal=".$element->getIdAnimal()."'>Delete</a></td></tr>";
+			echo "<td><a href='index.php?action=edit-animal&idAnimal=".$element->getIdAnimal()."'>Edit</a><a href='index.php?action=del-animal&idAnimal=".$element->getIdAnimal()."'>Delete</a></td></tr>";
 		}
 	}else{
 		echo $listeAnimals;	
