@@ -17,7 +17,7 @@ class AnimalManager extends Model
 	}
 	
 	public function createAnimal(Array $values){
-		$q = $this->execRequest('INSERT INTO animal(nom,proprietaire,espece,cri,age) VALUES (?,?,?,?,?) ',$values);
+		$q = $this->execRequest('INSERT INTO animal(nom,espece,proprietaire,cri,age) VALUES (?,?,?,?,?) ',$values);
 		$id = $this->getLastInsertId();
 		return $id;
 	}

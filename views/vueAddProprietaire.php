@@ -1,5 +1,5 @@
 <h1>Ajouter un proprietaire</h1>
-<form method="POST">
+<form action="index.php?action=add-proprietaire" method="POST">
 	<label for="nom">Nom: </label>
 	<input type="text" name="nom"/></br>
 	<input type="submit"/>

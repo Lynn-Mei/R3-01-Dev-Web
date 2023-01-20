@@ -13,8 +13,18 @@ else{
 	<input type="text" name="nom"  value="<?php if(isset($nom)){echo $nom;}?>"/></br>
 	<label for="nom">Espece: </label>
 	<input type="text" name="espece" value="<?php if(isset($espece)){echo $espece;}?>"/></br>
+
 	<label for="nom">Proprietaire: </label>
-	<input type="text" name="proprietaire" value="<?php if(isset($proprietaire)){echo $proprietaire;}?>"/></br>
+	<select name="proprietaire" id="proprietaire">
+	<?php
+		if(isset($proprietairesDispos)){
+			foreach ($proprietairesDispos as $proprio)
+			echo '<option value="'. $proprio->getIdProprietaire() .'">'. $proprio->getNom() .'</option>';
+		}
+		
+	?>
+	</select></br>
+
 	<label for="nom">Cri: </label>
 	<input type="text" name="cri" value="<?php if(isset($cri)){echo $cri;}?>"/></br>
 	<label for="nom">Age: </label>

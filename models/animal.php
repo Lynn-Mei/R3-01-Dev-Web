@@ -1,9 +1,12 @@
 <?php
+require_once("proprietaire.php");
+require_once("models/proprietairemanager.php");
+
 class Animal{
 
 private ?int $idAnimal;
 private string $nom;
-private ?string $proprietaire;
+private ?int $proprietaire;
 private ?string $espece;
 private ?string $cri;
 private ?int $age;
@@ -24,12 +27,13 @@ public function setNom(string $nom){
 	$this->nom = $nom;
 }
 
-public function getProprietaire():?string{
-	return $this->proprietaire;
+public function getProprietaire():?Proprietaire{
+	$manager = new ProprietaireManager();
+	return $manager->getByID($this->proprietaire); //should get for proprietaire
 }
 
-public function setProprietaire(?string $proprietaire){
-	$this->proprietaire = $proprietaire;
+public function setProprietaire(?int $idProprietaire){
+	$this->proprietaire = $idProprietaire;
 }
 
 public function getEspece():?string{
@@ -69,7 +73,7 @@ public function __toString(){
 	$s = "<td>".$this->idAnimal."</td>";
 	$s = $s."<td>".$this->nom."</td>";
 	$s = $s."<td>".$this->espece."</td>";
-	$s = $s."<td>".$this->proprietaire."</td>";
+	$s = $s."<td>".$this->getProprietaire() ."</td>";
 	$s = $s."<td>".$this->cri."</td>";
 	$s = $s."<td>".$this->age."</td>";
 	return $s;

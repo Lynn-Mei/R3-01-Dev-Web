@@ -3,6 +3,7 @@
 require_once("views/View.php");
 require_once("models/animal.php");
 require_once("models/animalmanager.php");
+require_once("models/proprietairemanager.php");
 
 class AnimalController{
 	
@@ -12,7 +13,9 @@ class AnimalController{
 	
 	public function displayAddAnimal(?string $val = null):void{
 		$indexView = new View('AddAnimal');
-		$indexView->generer(['val'=>$val]);
+		$propManager = new ProprietaireManager();
+		$proprietairesDispos = $propManager->getAll();
+		$indexView->generer(['val'=>$val, 'proprietairesDispos'=>$proprietairesDispos]);
 	}
 
 	public function displayEditAnimal(int $idAnimal):void{

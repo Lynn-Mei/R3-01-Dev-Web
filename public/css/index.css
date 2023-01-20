@@ -80,7 +80,13 @@ label{
 	font-size: 1.1em;
 }
 
-input[type="text"] , input[type="submit"]{
+input[type="text"], input[type="submit"] {
+	margin-left: 15%;
+	margin-bottom: 5%;
+	width: 70%;
+}
+
+select {
 	margin-left: 15%;
 	margin-bottom: 5%;
 	width: 70%;
@@ -121,7 +127,4 @@ td{
 th{
 	background-color: #7A8B8B;
 }
-
-
-
 

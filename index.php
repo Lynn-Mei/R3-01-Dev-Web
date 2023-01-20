@@ -1,12 +1,12 @@
 <?php
 require_once("controllers/MainController.php");
 require_once("controllers/AnimalController.php");
-require_once("controllers/OwnerController.php");
+require_once("controllers/ProprietaireController.php");
 
 
 $route = new MainController();
 $animalRoute = new AnimalController();
-$ownerRoute = new OwnerController();
+$ownerRoute = new ProprietaireController();
 
 if(isset($_GET['action'])){
 	$action = $_GET['action'];
@@ -31,6 +31,11 @@ if(isset($_GET['action'])){
 	}
 	if($action == 'add-proprietaire'){
 		$ownerRoute->displayAddProprietaire();
+		if(isset($_POST['nom'])){
+			$val = array();
+
+			$ownerRoute->addProprietaire($_POST);
+		}
 	}
 	if($action == 'search'){
 		$route->displaySearch();
