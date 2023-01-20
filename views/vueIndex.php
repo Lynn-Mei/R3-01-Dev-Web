@@ -21,8 +21,5 @@
 	}else{
 		echo $listeAnimals;	
 	}
-		
-		
-	?>
-	
+	?>	
 </table>

@@ -40,6 +40,21 @@ class AnimalManager extends Model
 		return $animal;
 	}
 	
+	public function getSearchResults(array $criterias):array{
+		$column = $criterias['column'];
+		$condition = array();
+		array_push($condition, $criterias['content']);
+		
+		$res = array();
+		$q = $this->execRequest('select * from animal where '. $column.' = ?',$condition);
+		while ($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+			$animal = new Animal();
+			$animal->hydrate($donnees);
+			array_push($res, $animal);
+		}
+		
+		return $res;
+	}
 	
 }
 

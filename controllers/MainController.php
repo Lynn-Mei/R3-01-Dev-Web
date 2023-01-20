@@ -12,15 +12,23 @@ class MainController{
 	public function displayIndex():void {
 		$indexView = new View('Index');
 		$manager = new animalManager();
-		$getOne = $manager->getAll();
+		$get = $manager->getAll();
 		
-		$indexView->generer(['nomAnimalerie' => "NyanCat",'listeAnimals' => $getOne]);
+		$indexView->generer(['nomAnimalerie' => "NyanCat",'listeAnimals' => $get]);
 	}
 	
 	public function displaySearch():void{
 		$indexView = new View('Search');
 		$indexView->generer([]);
 	}
+
+	public function displaySearchResults(array $criterias):void{
+		$searchView = new View('Search');
+		$manager = new animalManager();
+		$results = $manager->getSearchResults($criterias);
+		$searchView->generer(['listeAnimals'=>$results]);
+	}
+
 }
 
 ?>

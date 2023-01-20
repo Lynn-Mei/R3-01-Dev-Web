@@ -38,7 +38,14 @@ if(isset($_GET['action'])){
 		}
 	}
 	if($action == 'search'){
-		$route->displaySearch();
+		
+		if(isset($_POST['column'])){
+			if(isset($_POST['content']) && $_POST['content'] != ''){
+				$route->displaySearchResults($_POST);
+			}
+		}else{
+			$route->displaySearch();
+		}
 	}
 	if($action == 'del-animal'){
 		if(isset($_GET['idAnimal'])){
