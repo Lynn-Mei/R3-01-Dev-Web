@@ -28,8 +28,8 @@
 		<th>Name</th>
 		<th>Espece</th>
 		<th>Proprietaire</th>
-		<th>Age</th>
 		<th>Cri</th>
+		<th>Age</th>
 		<th>Options</th>
 	</tr>
 	
